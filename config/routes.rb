@@ -3,5 +3,5 @@ Rails.application.routes.draw do
 
 # get '/users', to: "users#index"
 get '/posts', to: "posts#index"
-
+get '/likes', to: "likes#index"
 end
