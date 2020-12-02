@@ -11,11 +11,12 @@ class PostsController < ApplicationController
     end
 
     def create
-        post = Post.new(image: params[:image], user_id:(User.create(name: params[:name])).id)
-        if post.save
-            render index
-        else
-            flash(danger: 'Post did not upload successfully!')
-        end
+        post = Post.create(image: params[:image], user_id: params[:user_id])
+        render json: post
+        # if post.save
+        #     render index
+        # else
+        #     flash(danger: 'Post did not upload successfully!')
     end
+
 end
