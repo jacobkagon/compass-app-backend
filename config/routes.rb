@@ -5,5 +5,7 @@ Rails.application.routes.draw do
 get '/posts', to: "posts#index"
 get '/likes', to: "likes#index"
 get '/posts/new', to: "posts#new"
-post 'posts', to: 'posts#index'
+post 'posts', to: 'posts#create'
+get 'users', to: 'users#index'
+post 'users', to: 'users#create'
 end

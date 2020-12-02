@@ -1,12 +1,11 @@
 class UsersController < ApplicationController
 
     def index
-       
         users = User.all 
         render json: users
     end
 
-    def show
-        
+    def create
+        User.create(name: params[:name])
     end
 end
