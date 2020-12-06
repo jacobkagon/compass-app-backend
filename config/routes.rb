@@ -11,4 +11,5 @@ post 'users', to: 'users#create'
 get 'posts/:id', to: 'posts#show'
 post '/likes', to: 'likes#create'
 get '/comments', to: 'comments#index'
+post '/comments', to: 'comments#create'
 end
