@@ -11,6 +11,8 @@ class CommentsController < ApplicationController
 
     def create
         comment = Comment.create(body: params[:body], user_id: params[:user_id], post_id: params[:post_id])
+        # byebug
         render json: comment
+        
     end
 end
