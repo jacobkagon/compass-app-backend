@@ -10,9 +10,14 @@ class CommentsController < ApplicationController
     end
 
     def create
-        comment = Comment.create(body: params[:body], user_id: params[:user_id], post_id: params[:post_id])
+        comment = Comment.create(comment_params)
         # byebug
         render json: comment
-        
+    end
+
+    private
+
+    def comment_params
+        params.require(:comment).permit(:body, :user_id, :post_id)
     end
 end
